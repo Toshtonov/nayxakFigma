@@ -499,7 +499,8 @@ p {
 }
 .navsinginbtnss{
     display: flex;
-    width: 82%;
+    width: 86%;
+    margin-right: 50px !important;
     margin: 0 auto;
     gap: 15px;
     justify-content: space-between;
