@@ -174,49 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showModal, 30000);
 
 });
-document.querySelectorAll(".dropdown-btn").forEach(button => {
-    button.addEventListener("click", function (event) {
-        event.stopPropagation(); // Boshqa event’larni bloklash
 
-        let menu = this.nextElementSibling; // Tugmadan keyingi dropdown
-        let allMenus = document.querySelectorAll(".dropdown-content");
-
-        // Barcha dropdownlarni yopish
-        allMenus.forEach(m => {
-            if (m !== menu) {
-                m.style.display = "none";
-            }
-        });
-
-        // Joriy menyuni ochish/yopish
-        menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    });
-});
-
-// Sahifadagi boshqa joyga bosilsa, barcha menyular yopiladi
-document.addEventListener("click", function () {
-    document.querySelectorAll(".dropdown-content").forEach(menu => {
-        menu.style.display = "none";
-    });
-});
-document.querySelectorAll(".dropdown-btn").forEach(button => {
-    button.addEventListener("click", function (event) {
-        event.stopPropagation(); // Sahifani bosganda yopilmasligi uchun
-
-        let menu = this.nextElementSibling; // Tugmadan keyingi dropdown
-        let allMenus = document.querySelectorAll(".dropdown-content");
-
-        // Barcha dropdownlarni yopish
-        allMenus.forEach(m => {
-            if (m !== menu) {
-                m.style.display = "none";
-            }
-        });
-
-        // Joriy menyuni ochish/yopish
-        menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    });
-});
 
 // Sahifadagi boshqa joyga bosilsa, barcha menyular yopiladi
 document.addEventListener("click", function () {

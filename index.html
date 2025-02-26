@@ -102,6 +102,7 @@
 
 
                     </div>
+
                 </div>
             </div>
             <div class="shopPage">
@@ -113,11 +114,11 @@
                         <p>Search results for “Shoes”</p>
                         <div class="shopTitleSpans">
                             <span>Link</span>
-                            <span>></span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
                             <span>Link</span>
-                            <span>></span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
                             <span>Link</span>
-                            <span>></span>
+                            <span><i class="fa-solid fa-chevron-right"></i></span>
                             <span class="qoraBoladi">Link</span>
                         </div>
                     </div>
@@ -145,15 +146,15 @@
                                     <a href="/" class="logodsd"> Nayzak</a>
                                     <p>Most successfully original aesthetic fashion premium blog</p>
                                     <div class="botlinks">
-                                       
-                                            <i class="fa-brands fa-facebook ficon"></i>
-                                            <i class="fa-brands fa-instagram ficon"></i>
-                                            <i class="fa-brands fa-twitter ficon"></i>
-                                            <i class="fa-regular fa-envelope ficon"></i>
-                                       
+
+                                        <i class="fa-brands fa-facebook ficon"></i>
+                                        <i class="fa-brands fa-instagram ficon"></i>
+                                        <i class="fa-brands fa-twitter ficon"></i>
+                                        <i class="fa-regular fa-envelope ficon"></i>
+
                                     </div>
                                 </div>
-        
+
                                 <div class="footer-links">
                                     <h3>Shop</h3>
                                     <ul>
@@ -163,7 +164,7 @@
                                         <li><a href="#">Cart</a></li>
                                     </ul>
                                 </div>
-        
+
                                 <div class="footer-links">
                                     <h3>Information</h3>
                                     <ul>
@@ -173,7 +174,7 @@
                                         <li><a href="#">Contact Us</a></li>
                                     </ul>
                                 </div>
-        
+
                                 <div class="footer-links">
                                     <h3>Company</h3>
                                     <ul>
@@ -184,12 +185,11 @@
                                     </ul>
                                 </div>
                             </div>
-        
+
                             <div class="footer-bottom">
                                 <p>© 2024 Nauzak Design</p>
                                 <div class="language-currency">
-                                    <span> <img src="./Flag-United-States-of-America.webp">English <i
-                                            class="fa-solid fa-arrow-down"></i></span>
+                                    <span>English <i class="fa-solid fa-arrow-down"></i></span>
                                     <span>USD<i class="fa-solid fa-arrow-down"></i></span>
                                 </div>
                             </div>
@@ -409,11 +409,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
             </div>
-            
+
         </div>
 
 
@@ -456,15 +456,18 @@
                     <span class="singinmodalX"><i class="fa-solid fa-x" id="yop"></i></span>
                 </div>
                 <p class="navsinginmodalDoc">Don’t have an accout yet? <span class="singup_singinLink ">Sign up </span>
-                    <input type="text" class="singininp name" placeholder="Your unsorname or email">
-                    <input type="text" class="singininp password" placeholder="Password">
+                    <input type="email" id="email" class="singininp name" placeholder="Your unsorname or email">
+                    <input type="password" id="password" class="singininp password" placeholder="Password">
                 <div class="singupbottext">
                     <input type="checkbox" onclick="toggleText(this)" class="singinmodalChekbox">
                     <span id="singupmodalchektext" class="singupmodalchektext">I agree with <span
                             class="singupmodalcheklink"> Privacy Policy</span> and <span class="singupmodalcheklink">
                             Terms of Use </span></span>
                 </div>
-                <button class="singinbotBtn">Singin</button>
+                <div class="navsinginbtnss">
+                    <button id="googleLogin"><i class="fa-solid fa-g fa-xl"></i>oogle</i></button>
+                    <button class="singinbotBtn" onclick="registerUser()">Singin</button>
+                </div>
             </div>
         </div>
 
@@ -516,6 +519,77 @@
         </div>
 
     </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBuQFNHXDrDtt9IlXAKExR6hl2BCKxK8VQ",
+            authDomain: "nayzak-8cd7c.firebaseapp.com",
+            projectId: "nayzak-8cd7c",
+            storageBucket: "nayzak-8cd7c.appspot.com",
+            messagingSenderId: "697119814290",
+            appId: "1:697119814290:web:b1601b92f4e4d38c39ec4b",
+            measurementId: "G-W2HTRHMFJQ"
+        };
+
+        // Firebase-ni ishga tushirish
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Ro‘yxatdan o‘tish (Sign up)
+        window.registerUser = function () {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+
+                })
+                .catch((error) => {
+
+                });
+        };
+
+    </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+        console.log("Firebase yuklanmoqda...");
+
+        // Firebase konfiguratsiyasi
+        const config = {
+            apiKey: "AIzaSyBuQFNHXDrDtt9IlXAKExR6hl2BCKxK8VQ",
+            authDomain: "nayzak-8cd7c.firebaseapp.com",
+            projectId: "nayzak-8cd7c",
+            storageBucket: "nayzak-8cd7c.appspot.com",
+            messagingSenderId: "697119814290",
+            appId: "1:697119814290:web:b1601b92f4e4d38c39ec4b",
+            measurementId: "G-W2HTRHMFJQ"
+        };
+
+        // Firebase ilovasini ishga tushirish
+        const firebaseApp = initializeApp(config);
+        const authService = getAuth(firebaseApp);
+        const googleProvider = new GoogleAuthProvider();
+
+        console.log("Firebase yuklandi!");
+
+        // Google bilan kirish tugmasi bosilganda
+        document.getElementById("googleLogin").addEventListener("click", function () {
+
+
+            signInWithPopup(authService, googleProvider)
+                .then((response) => {
+
+                })
+                .catch((error) => {
+
+                });
+        });
+    </script>
+
 
     <script src="app.js"></script>
 </body>

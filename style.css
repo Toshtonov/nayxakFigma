@@ -440,7 +440,7 @@ p {
     margin: 0 auto;
     height: 50px;
     border: none;
-    border-bottom: 1px solid #cbcbcb;
+    border-bottom: 1px solid #cbcbcb !important;
     outline: none;
     padding-left: 2px;
     font-size: 16px;
@@ -497,10 +497,15 @@ p {
     border: none;
     outline: none;
 }
-
+.navsinginbtnss{
+    display: flex;
+    width: 82%;
+    margin: 0 auto;
+    gap: 15px;
+    justify-content: space-between;
+}
 .singinbotBtn {
-    width: 86%;
-    margin-left: 34px;
+    width: 50%;
     height: 70px;
     background-color: #000;
     color: #fff;
@@ -510,7 +515,17 @@ p {
     border: none;
     outline: none;
 }
-
+#googleLogin{
+    width: 50%;
+    height: 70px;
+    background-color: #000;
+    color: #fff;
+    font-size: 25px;
+    font-family: Space Grotesk;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
 .nabar {
     height: 100%;
     width: 400px;
@@ -653,7 +668,7 @@ p {
 h2 {
     font-size: 24px;
     margin-bottom: 16px;
-    color: #333;
+    color: #000000;
 }
 
 p {
@@ -991,7 +1006,7 @@ h1 {
     color: #605F5F;
 }
 
-.ooorr {}
+
 
 .sreachBoxcardNav {
     display: flex;
@@ -1087,7 +1102,7 @@ h1 {
     width: 26px;
     height: 14px;
 }
-.fa-solid{
+.fa-chevron-right{
     color: black !important;
 }
 .logodsd{
