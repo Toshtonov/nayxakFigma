@@ -466,7 +466,8 @@
                 </div>
                 <div class="navsinginbtnss">
                     <button id="googleLogin"><i class="fa-solid fa-g fa-xl"></i>oogle</i></button>
-                    <button class="singinbotBtn" onclick="registerUser()">Singin</button>
+                    <button id="githubKirish"><i class="fa-solid fa-g fa-xl"></i>itHub</button>
+                    <button class="singinbotBtn" onclick="registerUser()"><i class="fa-solid fa-s"></i>ingin</button>
                 </div>
             </div>
         </div>
@@ -589,6 +590,34 @@
                 });
         });
     </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+        // Firebase konfiguratsiyasi
+        const firebaseSozlamalari = {
+            apiKey: "AIzaSyBuQFNHXDrDtt9IlXAKExR6hl2BCKxK8VQ",
+            authDomain: "nayzak-8cd7c.firebaseapp.com",
+            projectId: "nayzak-8cd7c",
+            storageBucket: "nayzak-8cd7c.appspot.com",
+            messagingSenderId: "697119814290",
+            appId: "1:697119814290:web:b1601b92f4e4d38c39ec4b",
+            measurementId: "G-W2HTRHMFJQ"
+        };
+
+        // Firebase'ni ishga tushirish
+        const ilova = initializeApp(firebaseSozlamalari);
+        const autentifikatsiyaXizmati = getAuth(ilova);
+        const gitProvayder = new GithubAuthProvider();
+
+        // GitHub orqali kirish
+        document.getElementById("githubKirish").addEventListener("click", function () {
+            signInWithPopup(autentifikatsiyaXizmati, gitProvayder)
+              
+        });
+    </script>
+
+
 
 
     <script src="app.js"></script>

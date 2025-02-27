@@ -506,7 +506,7 @@ p {
     justify-content: space-between;
 }
 .singinbotBtn {
-    width: 50%;
+    width: 30%;
     height: 70px;
     background-color: #000;
     color: #fff;
@@ -517,7 +517,18 @@ p {
     outline: none;
 }
 #googleLogin{
-    width: 50%;
+    width: 30%;
+    height: 70px;
+    background-color: #000;
+    color: #fff;
+    font-size: 25px;
+    font-family: Space Grotesk;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+#githubKirish{
+    width: 30%;
     height: 70px;
     background-color: #000;
     color: #fff;
