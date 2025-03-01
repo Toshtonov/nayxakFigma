@@ -306,11 +306,140 @@ const styles = `
         opacity: 0.5;
     }
 `;
-
-
 const styleSheet = document.createElement('style');
 styleSheet.textContent = styles;
 document.head.appendChild(styleSheet);
+document.addEventListener('DOMContentLoaded', function () {
+    // Category and style selection
+    const categoryItems = document.querySelectorAll('.category-list li');
+    const styleItems = document.querySelectorAll('.style-list li');
 
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function () {
+            categoryItems.forEach(i => i.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
 
-document.addEventListener('DOMContentLoaded', initializeLayoutSwitcher);
+    styleItems.forEach(item => {
+        item.addEventListener('click', function () {
+            styleItems.forEach(i => i.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+
+    // Color selection
+    const colorCircles = document.querySelectorAll('.color-circle');
+
+    colorCircles.forEach(circle => {
+        circle.addEventListener('click', function () {
+            colorCircles.forEach(c => {
+                // Remove any existing after elements
+                c.style.boxShadow = 'none';
+                c.style.position = '';
+            });
+
+            // Add selection indicator
+            this.style.position = 'relative';
+            this.style.boxShadow = `0 0 0 3px ${this.style.backgroundColor}, 0 0 0 4px #ddd`;
+        });
+    });
+
+    // Size selection
+    const sizeButtons = document.querySelectorAll('.size-btn');
+
+    sizeButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                this.style.backgroundColor = 'white';
+                this.style.color = 'black';
+            } else {
+                this.classList.add('selected');
+                this.style.backgroundColor = 'black';
+                this.style.color = 'white';
+            }
+        });
+    });
+
+    // Price range slider
+    const minPriceSlider = document.getElementById('min-price');
+    const maxPriceSlider = document.getElementById('max-price');
+    const priceRangeDisplay = document.querySelector('.price-range');
+
+    function updatePriceRange() {
+        const minPrice = parseInt(minPriceSlider.value);
+        const maxPrice = parseInt(maxPriceSlider.value);
+
+        if (minPrice > maxPrice) {
+            // Prevent min from being greater than max
+            minPriceSlider.value = maxPrice;
+        }
+
+        priceRangeDisplay.textContent = `$${minPriceSlider.value} - $${maxPriceSlider.value}`;
+    }
+
+    minPriceSlider.addEventListener('input', updatePriceRange);
+    maxPriceSlider.addEventListener('input', updatePriceRange);
+
+    // Close button
+    const closeBtn = document.querySelector('.close-btn');
+    closeBtn.addEventListener('click', function () {
+        alert('Filter closed');
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    // Thumbnail image click handler
+    const thumbnails = document.querySelectorAll(".thumbnail")
+    const mainImage = document.getElementById("main-product-image")
+
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener("click", function () {
+            // In a real implementation, we would change the src to the actual image
+            // For this demo, we're just toggling the active class
+            thumbnails.forEach((t) => t.classList.remove("active"))
+            this.classList.add("active")
+        })
+    })
+
+    // Color selection
+    const colorOptions = document.querySelectorAll(".color-option")
+
+    colorOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+            colorOptions.forEach((o) => o.classList.remove("active"))
+            this.classList.add("active")
+        })
+    })
+
+  
+
+    const minusBtn = document.querySelector(".minus")
+    const plusBtn = document.querySelector(".plus")
+    const quantityInput = document.querySelector(".quantity-input")
+
+   
+
+    // Tab functionality
+    const tabHeaders = document.querySelectorAll(".tab-header")
+    const tabPanels = document.querySelectorAll(".tab-panel")
+
+    tabHeaders.forEach((header) => {
+        header.addEventListener("click", function () {
+            const tabId = this.getAttribute("data-tab")
+
+            // Remove active class from all headers and panels
+            tabHeaders.forEach((h) => h.classList.remove("active"))
+            tabPanels.forEach((p) => p.classList.remove("active"))
+
+            // Add active class to clicked header and corresponding panel
+            this.classList.add("active")
+            document.getElementById(tabId).classList.add("active")
+        })
+    })
+
+    const addToCartBtn = document.querySelector(".add-to-cart-btn")
+
+  
+})
+
