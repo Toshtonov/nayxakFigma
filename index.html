@@ -32,11 +32,48 @@
         <nav class="nav">
             <img src="./image/Branding.png" class="navBARS" id="navbaropen">
             <ul>
-                <li data-switcher="home">Home<i class="fa-solid fa-chevron-down navIconDown"></i></li>
-                <li data-switcher="shop">Shop<i class="fa-solid fa-chevron-down navIconDown"></i></i>
+                <li data-switcher="home"> <button class="dropdown-btn">Home <i
+                            class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Home 1</a>
+                        <a href="#">Home 2</a>
+                        <a href="#">Home 3</a>
+                    </div>
                 </li>
-                <li data-switcher="product">Product<i class="fa-solid fa-chevron-down navIconDown"></i></li>
-                <li>Pages<i class="fa-solid fa-chevron-down navIconDown"></i></li>
+                <li data-switcher="shop"> <button class="dropdown-btn">Shop <i
+                            class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Shop 1</a>
+                        <a href="#">Shop 2</a>
+                        <a href="#">Shop 3</a>
+                    </div></i></i>
+                </li>
+                <li data-switcher="product">
+                    <button class="dropdown-btn">Product
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Product 1</a>
+                        <a href="#">Product 2</a>
+                        <a href="#">Product 3</a>
+                    </div>
+                </li>
+                <li data-switcher="blog"> <button class="dropdown-btn">Blog <i
+                            class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Blog 1</a>
+                        <a href="#">Blog 2</a>
+                        <a href="#">Blog 3</a>
+                    </div></i>
+                </li>
+                <li>
+                    <button class="dropdown-btn">Pages <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Page 1</a>
+                        <a href="#">Page 2</a>
+                        <a href="#">Page 3</a>
+                    </div>
+                </li>
             </ul>
 
             <div class="navBtn">
@@ -485,224 +522,445 @@
                     </div>
                 </div>
             </div>
-            <div id="product" class="page">
-                <div class="product-container">
-                    <div class="product-images">
-                        <div class="main-image">
-                            <span class="sale-badge">SALE</span>
-                            <img src="./image/productpage.png" alt="Kensho Pants" id="main-product-image">
+            <div class="productPage">
+                <div id="product" class="page">
+                    <div class="product-container">
+                        <div class="product-images">
+                            <div class="main-image">
+                                <div class="sale-badge">-<i class="fa-solid fa-5"></i><i class="fa-solid fa-0"></i><i
+                                        class="fa-solid fa-percent"></i></div>
+                                <img src="./image/productpage.png" alt="Kensho Pants" id="main-product-image">
+                            </div>
+                            <div class="thumbnail-images">
+                                <img src="./image/productpage.png" alt="Kensho Pants Thumbnail 1"
+                                    class="thumbnail active" data-index="0">
+                                <img src="./image/productpage2.png" alt="Kensho Pants Thumbnail 2" class="thumbnail"
+                                    data-index="1">
+                                <img src="./image/productpage3.png" alt="Kensho Pants Thumbnail 3" class="thumbnail"
+                                    data-index="2">
+                                <img src="./image/productpage4.png" alt="Kensho Pants Thumbnail 4" class="thumbnail"
+                                    data-index="3">
+                            </div>
                         </div>
-                        <div class="thumbnail-images">
-                            <img src="./image/productpage.png" alt="Kensho Pants Thumbnail 1" class="thumbnail active"
-                                data-index="0">
-                            <img src="./image/productpage2.png" alt="Kensho Pants Thumbnail 2" class="thumbnail"
-                                data-index="1">
-                            <img src="./image/productpage3.png" alt="Kensho Pants Thumbnail 3" class="thumbnail"
-                                data-index="2">
-                            <img src="./image/productpage4.png" alt="Kensho Pants Thumbnail 4" class="thumbnail"
-                                data-index="3">
+
+                        <div class="product-details">
+                            <div class="breadcrumb">
+                                <a href="#">Home</a> / <a href="#">Shop</a> / <span>Digital Products</span>
+                            </div>
+                            <h1>Kensho Pants</h1>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu magna
+                                vel
+                                lorem varius elementum.</p>
+
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>(5 Reviews)</span>
+                            </div>
+
+                            <div class="price">
+                                <span class="current-price">$86.00</span>
+                                <span class="original-price">$120.00</span>
+                            </div>
+
+                            <div class="stock-info">
+                                <i class="fas fa-eye"></i>
+                                <span>32 people are looking at this product</span>
+                            </div>
+
+                            <div class="color-selection">
+                                <h3>Color</h3>
+                                <div class="color-options">
+                                    <div class="color-option green active" data-color="green"></div>
+                                    <div class="color-option pink" data-color="pink"></div>
+                                    <div class="color-option blue" data-color="blue"></div>
+                                    <div class="color-option black" data-color="black"></div>
+                                </div>
+                            </div>
+
+                            <div class="size-selection">
+                                <h3>Size</h3>
+                                <div class="size-options">
+                                    <div class="size-option">XS</div>
+                                    <div class="size-option active">S</div>
+                                    <div class="size-option">M</div>
+                                    <div class="size-option">L</div>
+                                    <div class="size-option">XL</div>
+                                </div>
+                            </div>
+
+                            <div class="quantity-selector">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="number" value="1" min="1" class="quantity-input">
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="add-to-cart-btn">Add to Cart</button>
+                            </div>
+
+                            <div class="product-actions">
+                                <button class="wishlist-btn"><i class="far fa-heart"></i> Wishlist</button>
+                                <button class="ask-question-btn"><i class="far fa-question-circle"></i> Ask
+                                    question</button>
+                                <button class="share-btn"><i class="fas fa-share"></i> Share</button>
+                            </div>
+
+                            <div class="product-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">SKU:</span>
+                                    <span class="meta-value">123</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">TAG:</span>
+                                    <span class="meta-value">Linen, Yellow, Polka Dot</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="product-details">
-                        <div class="breadcrumb">
-                            <a href="#">Home</a> / <a href="#">Shop</a> / <span>Digital Products</span>
+                    <div class="product-tabs">
+                        <div class="tab-headers">
+                            <div class="tab-header active" data-tab="description">Description</div>
+                            <div class="tab-header" data-tab="additional-info">Additional Info</div>
+                            <div class="tab-header" data-tab="reviews">Reviews (25)</div>
+                            <div class="tab-header" data-tab="questions">Questions</div>
                         </div>
-                        <h1>Kensho Pants</h1>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu magna vel
-                            lorem varius elementum.</p>
 
-                        <div class="rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                        <div class="tab-content">
+                            <div class="tab-panel active" id="description">
+                                <span>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                    praesentium <br>
+                                    voluptatum deleniti atque corrupti quos dolores et quas <br> molestias excepturi
+                                    sint
+                                    occaecati cupiditate non provident.</span>
                             </div>
-                            <span>(5 Reviews)</span>
-                        </div>
-
-                        <div class="price">
-                            <span class="current-price">$86.00</span>
-                            <span class="original-price">$120.00</span>
-                        </div>
-
-                        <div class="stock-info">
-                            <i class="fas fa-eye"></i>
-                            <span>32 people are looking at this product</span>
-                        </div>
-
-                        <div class="color-selection">
-                            <h3>Color</h3>
-                            <div class="color-options">
-                                <div class="color-option green active" data-color="green"></div>
-                                <div class="color-option pink" data-color="pink"></div>
-                                <div class="color-option blue" data-color="blue"></div>
-                                <div class="color-option black" data-color="black"></div>
+                            <div class="tab-panel" id="additional-info">
+                                <ul class="features-list">
+                                    <li>Material: 100% Linen</li>
+                                    <li>Fit type: Loose fit</li>
+                                    <li>Feature: Adjustable straps</li>
+                                    <li>Front and back pockets</li>
+                                </ul>
                             </div>
-                        </div>
-
-                        <div class="size-selection">
-                            <h3>Size</h3>
-                            <div class="size-options">
-                                <div class="size-option">XS</div>
-                                <div class="size-option active">S</div>
-                                <div class="size-option">M</div>
-                                <div class="size-option">L</div>
-                                <div class="size-option">XL</div>
+                            <div class="tab-panel" id="reviews">
+                                <span>Customer reviews will appear here.</span>
                             </div>
-                        </div>
-
-                        <div class="quantity-selector">
-                            <button class="quantity-btn minus">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="quantity-btn plus">+</button>
-                        </div>
-
-                        <div class="action-buttons">
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                        </div>
-
-                        <div class="product-actions">
-                            <button class="wishlist-btn"><i class="far fa-heart"></i> Wishlist</button>
-                            <button class="ask-question-btn"><i class="far fa-question-circle"></i> Ask
-                                question</button>
-                            <button class="share-btn"><i class="fas fa-share"></i> Share</button>
-                        </div>
-
-                        <div class="product-meta">
-                            <div class="meta-item">
-                                <span class="meta-label">SKU:</span>
-                                <span class="meta-value">123</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-label">TAG:</span>
-                                <span class="meta-value">Linen, Yellow, Polka Dot</span>
+                            <div class="tab-panel" id="questions">
+                                <span>Customer questions will appear here.</span>
                             </div>
                         </div>
                     </div>
+
+                    <div class="related-products">
+                        <div class="related-productsTitle">
+                            <h2>You might also like</h2>
+                            <div class="product-navigation">
+                                <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+                                <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="products-grid">
+                            <div class="product-card">
+                                <img src="./image/productpage5.png" alt="Related Product 1">
+                                <h3 class="product-name">Product Name</h3>
+                                <div class="product-price">$59.00</div>
+                            </div>
+                            <div class="product-card">
+                                <img src="./image/productpage6.png" alt="Related Product 2">
+                                <h3 class="product-name">Product Name</h3>
+                                <div class="product-price">$68.00</div>
+                            </div>
+                            <div class="product-card">
+                                <img src="./image/productpage7.png" alt="Related Product 3">
+                                <h3 class="product-name">Product Name</h3>
+                                <div class="product-price">$45.00</div>
+                            </div>
+                            <div class="product-card">
+                                <img src="./image/productpage8.png" alt="Related Product 4">
+                                <h3 class="product-name">Product Name</h3>
+                                <div class="product-price">$79.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    </main>
+
+                    <footer>
+                        <div class="footer-container">
+                            <div class="footer-column">
+                                <img src="./image/Branding (2).png" alt="Nayzak Logo" class="footer-logo">
+                                <p>Place text here to engage worldwide creative product shopping.</p>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                            <div class="footer-column">
+                                <h3>Shop</h3>
+                                <ul>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Orders</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Cart</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-column">
+                                <h3>Information</h3>
+                                <ul>
+                                    <li><a href="#">Shipping Policy</a></li>
+                                    <li><a href="#">Returns & Refunds</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-column">
+                                <h3>Company</h3>
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Nayzak Design</p>
+                            <div class="language-selector">
+                                <select>
+                                    <option value="en">English</option>
+                                    <option value="fr">French</option>
+                                    <option value="es">Spanish</option>
+                                </select>
+                                <select>
+                                    <option value="usd">USD</option>
+                                    <option value="eur">EUR</option>
+                                    <option value="gbp">GBP</option>
+                                </select>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
-
-                <div class="product-tabs">
-                    <div class="tab-headers">
-                        <div class="tab-header active" data-tab="description">Description</div>
-                        <div class="tab-header" data-tab="additional-info">Additional Info</div>
-                        <div class="tab-header" data-tab="reviews">Reviews (25)</div>
-                        <div class="tab-header" data-tab="questions">Questions</div>
-                    </div>
-
-                    <div class="tab-content">
-                        <div class="tab-panel active" id="description">
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati cupiditate non provident.</p>
-                        </div>
-                        <div class="tab-panel" id="additional-info">
-                            <ul class="features-list">
-                                <li>Material: 100% Linen</li>
-                                <li>Fit type: Loose fit</li>
-                                <li>Feature: Adjustable straps</li>
-                                <li>Front and back pockets</li>
-                            </ul>
-                        </div>
-                        <div class="tab-panel" id="reviews">
-                            <p>Customer reviews will appear here.</p>
-                        </div>
-                        <div class="tab-panel" id="questions">
-                            <p>Customer questions will appear here.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="related-products">
-                    <div class="related-productsTitle">
-                        <h2>You might also like</h2>
-                        <div class="product-navigation">
-                            <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
-                            <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                    <div class="products-grid">
-                        <div class="product-card">
-                            <img src="./image/productpage5.png" alt="Related Product 1">
-                            <h3 class="product-name">Product Name</h3>
-                            <div class="product-price">$59.00</div>
-                        </div>
-                        <div class="product-card">
-                            <img src="./image/productpage6.png" alt="Related Product 2">
-                            <h3 class="product-name">Product Name</h3>
-                            <div class="product-price">$68.00</div>
-                        </div>
-                        <div class="product-card">
-                            <img src="./image/productpage7.png" alt="Related Product 3">
-                            <h3 class="product-name">Product Name</h3>
-                            <div class="product-price">$45.00</div>
-                        </div>
-                        <div class="product-card">
-                            <img src="./image/productpage8.png" alt="Related Product 4">
-                            <h3 class="product-name">Product Name</h3>
-                            <div class="product-price">$79.00</div>
-                        </div>
-                    </div>
-                </div>
-                </main>
-
-                <footer>
-                    <div class="footer-container">
-                        <div class="footer-column">
-                            <img src="./image/Branding (2).png" alt="Nayzak Logo" class="footer-logo">
-                            <p>Place text here to engage worldwide creative product shopping.</p>
-                            <div class="social-icons">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-pinterest"></i></a>
-                            </div>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Shop</h3>
-                            <ul>
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Orders</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">Cart</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Information</h3>
-                            <ul>
-                                <li><a href="#">Shipping Policy</a></li>
-                                <li><a href="#">Returns & Refunds</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Company</h3>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer-bottom">
-                        <p>&copy; 2024 Nayzak Design</p>
-                        <div class="language-selector">
-                            <select>
-                                <option value="en">English</option>
-                                <option value="fr">French</option>
-                                <option value="es">Spanish</option>
-                            </select>
-                            <select>
-                                <option value="usd">USD</option>
-                                <option value="eur">EUR</option>
-                                <option value="gbp">GBP</option>
-                            </select>
-                        </div>
-                    </div>
-                </footer>
             </div>
+            <div id="blog" class="page">
+                
+    <section class="hero">
+        <div class="container">
+            <h1>Nauzak Blog</h1>
+            <p>All news and all discussions all styles into digital world and beautiful presentation integration service
+            </p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search">
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <main class="blog-section">
+        <div class="container">
+            <div class="blog-header">
+                <h2>List Articles</h2>
+                <div class="view-options">
+                    <span>Filer </span><span><i class="fa-solid fa-sliders"></i></span>
+                    <span>Sort by</span><i class="fa-solid fa-arrow-down"></i>
+                    <div class="view-toggles">
+                        <button class="grid-view"><i class="fa-solid fa-list"></i></button>
+                        <button class="list-view"><i class="fa-solid fa-layer-group"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cardContainer">
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="../image/548331620e8ea0a785647fa179575cbd.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>3 Instagram-Inspired Interior Design Trends to Buy, Like, Immediately</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/ce6d1b3f2d67215aec82b0bbc7d6df13.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>What’s The First Light Jacket You Wear Come Fall?</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/8d199eb66a3fb1a18296fa33a8f30d0a.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>Take Your Bed With you: 3 Cozy People Style Quilted Clothes</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/f57ec8f7bc1a6e6ff6ebf01c5562ee1e.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>NYFW: Collina Strada Went All Out and Waaay Out</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/af8e94f1a8f29ba61b99312597fa5149.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>Take Your Bed With you: 3 Cozy People Style Quilted Clothes</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/f463cbf1f6455e636e7c637ed25c154c.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>7 Printed Pants Recipes for Fall</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/f4a0b0562c52f6e2fcc56482621fa1cb.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>Advice: Am I The Only One Who Doesn’t Want To Look Like Glass?</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/1bcf955fd0719232bdbb2a5cdda4b56f.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>You Look Moist: The Conscious Consumer who Swears by *Gasp* Coconut Oil</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/886be2d4dc8f67780c2eaa0f55b5c269.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>I Asked 3 Beauty Experts to Help Me Create a Minimalist Skincare Routine</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/24d63a31569408ba6a442d9c9c2a6767.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>You Look Moist: A Graphic Designer’s Cheap & Simple Approach to Dewy Skin</h3>
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/c2f330b414e80ff8dea49ba8b389010e.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>The Outnet Sale Just Made Me Really, Really Excited for Fall</h3>
+
+                    </div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="./image/d87d098328bc71e376d582726d8ef7fa.png" alt="rasm">
+                        </div>
+                        <p>October 12, 2024</p>
+                        <h3>You Look Moist: Team Repeller’s Marisa Lifschutz’s K-Beauty-Inspired Routine</h3>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <span>...</span>
+                <button>33</button>
+                <button>34</button>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo"> Nayzak</a>
+                    <p>Most successfully original aesthetic fashion premium blog</p>
+                    <div class="botlinks">
+                        <a href="#" class="footer_icons">
+                            <i class="fa-brands fa-facebook ficon"></i>
+                            <i class="fa-brands fa-instagram ficon"></i>
+                            <i class="fa-brands fa-twitter ficon"></i>
+                            <i class="fa-regular fa-envelope ficon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">My account</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Cart</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">Who we are</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Nauzak Design</p>
+                <div class="language-currency">
+                    <span> <img src="./image/image.png">English <i
+                            class="fa-solid fa-arrow-down"></i></span>
+                    <span>USD<i class="fa-solid fa-arrow-down"></i></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+            </div>
+
         </div>
 
 
@@ -761,33 +1019,35 @@
             </div>
         </div>
 
-        <div class="nabar" id="nabar" <span class="navbarCloseBtn">
-            <i class="fa-solid fa-x navbarcloseBtn" id="yopq"></i>
-            </span>
-            <div class="navartexts">
-                <p class="navbarpage">Home</p>
-                <p class="navbarpage">Shop</p>
-                <p class="navbarpage">Product</p>
-                <p class="navbarpage">Pages</p>
-                <p class="navbarpage">Shop</p>
-            </div>
+        <div class="orbteur">
+            <div class="nabar" id="nabar"><span class="navbarCloseBtn">
+                    <i class="fa-solid fa-x navbarcloseBtn" id="yopq"></i>
+                </span>
+                <div class="navartexts">
+                    <p class="navbarpage">Home</p>
+                    <p class="navbarpage">Shop</p>
+                    <p class="navbarpage">Product</p>
+                    <p class="navbarpage">Pages</p>
+                    <p class="navbarpage">Shop</p>
+                </div>
 
-            <div class="navbaricons">
-                <i class="fa-brands fa-facebook navbaricon "></i>
-                <i class="fa-brands fa-instagram navbaricon"></i>
-                <i class="fa-brands fa-twitter navbaricon"></i>
-                <i class="fa-regular fa-envelope navbaricon"></i>
-            </div>
-            <div class="navbarbottom">
-                <div class="curencly">
-                    <span>Currency</span>
-                    <span>USD<i class="fa-solid fa-chevron-down"></i></span>
+                <div class="navbaricons">
+                    <i class="fa-brands fa-facebook navbaricon "></i>
+                    <i class="fa-brands fa-instagram navbaricon"></i>
+                    <i class="fa-brands fa-twitter navbaricon"></i>
+                    <i class="fa-regular fa-envelope navbaricon"></i>
                 </div>
-                <div class="language">
-                    <span>Language</span>
-                    <span>English<i class="fa-solid fa-chevron-down"></i></span>
+                <div class="navbarbottom">
+                    <div class="curencly">
+                        <span>Currency</span>
+                        <span>USD<i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <div class="language">
+                        <span>Language</span>
+                        <span>English<i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                    <button class="navbarSinginBtn">Sing in</button>
                 </div>
-                <button class="navbarSinginBtn">Sing in</button>
             </div>
         </div>
         <div class="modalOrabtur">
@@ -925,9 +1185,6 @@
             }
         });
     </script>
-
-
-
 
     <script src="app.js"></script>
 </body>

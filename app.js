@@ -115,6 +115,7 @@ navbaropen.onclick = function () {
     nabar.style.display = "block";
 }
 navbarno.onclick = function () {
+    nabar.style.display = "none";
 }
 window.onclick = function (even) {
     if (even.target == nabar) {
@@ -442,4 +443,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 })
+document.querySelectorAll(".dropdown-btn").forEach(button => {
+    button.addEventListener("click", function (event) {
+        event.stopPropagation(); // Boshqa eventlarni to‘xtatish
 
+        let menu = this.parentElement.querySelector(".dropdown-content"); // Tugma ichidagi menyuni olish
+        let allMenus = document.querySelectorAll(".dropdown-content");
+
+        // Barcha dropdownlarni yopish
+        allMenus.forEach(m => {
+            if (m !== menu) {
+                m.style.display = "none";
+            }
+        });
+
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    });
+});
+
+document.addEventListener("click", function () {
+    document.querySelectorAll(".dropdown-content").forEach(menu => {
+        menu.style.display = "none";
+    });
+});
+window.addEventListener("click", function (event) {
+    if (modal && event.target === modal) {
+        modal.style.display = "none";
+    }
+
+    if (singinmodal && event.target === singinmodal) {
+        singinmodal.style.display = "none";
+    }
+    if (nabar && event.target === nabar) {
+        nabar.style.display = "none";
+    }
+    document.querySelectorAll(".dropdown-content").forEach(menu => {
+        if (!menu.contains(event.target) && !menu.previousElementSibling.contains(event.target)) {
+            menu.style.display = "none";
+        }
+    });
+});
